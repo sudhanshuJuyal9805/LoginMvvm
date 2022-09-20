@@ -15,17 +15,17 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
 
 //    val users = repository.users
 
-    val inputUsername = MutableLiveData<String>()
+    val inputEmail = MutableLiveData<String>()
 
     val inputPassword = MutableLiveData<String>()
 
     fun loginButton() {
 
-        //-------Logic for the code
+
     }
 
     fun signUP() {
-        //navigate to the Register Fragment
+
     }
 
 
