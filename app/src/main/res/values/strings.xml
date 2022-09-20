@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">LoginMvvm</string>
+    <string name="enterEmail">Enter Email</string>
+    <string name="enterFistName">Enter First Name</string>
+    <string name="enterLastName">Enter Last Name</string>
+    <string name="enterPassword">Enter Password</string>
+    <string name="Login">Login</string>
+    <string name="Register">Register</string>
+
 </resources>
