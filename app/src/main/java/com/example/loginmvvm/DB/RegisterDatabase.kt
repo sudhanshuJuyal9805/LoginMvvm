@@ -27,7 +27,7 @@ abstract class RegisterDatabase : RoomDatabase() {
                         context.applicationContext,
                         RegisterDatabase::class.java,
                         "user_details_database"
-                    )
+                    ).allowMainThreadQueries()
                         .fallbackToDestructiveMigration()
                         .build()
 

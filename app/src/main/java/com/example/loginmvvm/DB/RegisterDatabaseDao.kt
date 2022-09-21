@@ -14,5 +14,5 @@ interface RegisterDatabaseDao
     fun insert(register: RegisterEntity)
 
     @Query("SELECT * FROM Register_users_table WHERE email LIKE :email AND password_text LIKE :password")
-    fun login(email: String, password: String): LiveData<RegisterEntity>
+    fun login(email: String, password: String): RegisterEntity
 }

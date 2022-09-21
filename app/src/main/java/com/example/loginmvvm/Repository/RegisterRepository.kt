@@ -20,11 +20,10 @@ class RegisterRepository(private val dao: RegisterDatabaseDao) {
 
         return dao.insert(user)
     }
-    fun login(email:String,password:String)
+   fun login(email:String,password:String):RegisterEntity
     {
-      var response=  dao.login(email,password)
-//        getLoginLiveData.postValue(response)
-
+      return  dao.login(email,password)
+//        loginMutableLiveData.postValue(response.)
     }
 
 }

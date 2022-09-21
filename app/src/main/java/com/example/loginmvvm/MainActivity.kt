@@ -1,8 +1,11 @@
 package com.example.loginmvvm
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.loginmvvm.DB.RegisterDatabase
 import com.example.loginmvvm.Repository.RegisterRepository
@@ -21,5 +24,30 @@ class MainActivity : AppCompatActivity() {
         mainActivityViewModel= ViewModelProvider(this,LoginViewModelFactory(repository,application))[LoginViewModel::class.java]
         binding.myLoginViewModel=mainActivityViewModel
         binding.lifecycleOwner=this
+        mainActivityViewModel.navigateto.observe(this, Observer { hasFinished->
+            if (hasFinished == true){
+                Log.i("MYTAG","insidi observe")
+                displayUsersList()
+                mainActivityViewModel.doneNavigating()
+            }
+        })
+        mainActivityViewModel.navigatetoLogin.observe(this, Observer { hasFinished->
+            if (hasFinished == true){
+                Log.i("MYTAG","insidi observe")
+                toRegister()
+                mainActivityViewModel.doneNavigating()
+            }
+        })
+    }
+
+    private fun toRegister() {
+        val intent = Intent(this,HomePage::class.java)
+        startActivity(intent)
+        TODO("Not yet implemented")
+    }
+
+    private fun displayUsersList() {
+        val intent = Intent(this,HomePage::class.java)
+        startActivity(intent)
     }
 }
