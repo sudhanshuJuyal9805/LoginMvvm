@@ -33,9 +33,9 @@
             android:id="@+id/emailTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="73dp"
-            android:layout_marginEnd="80dp"
+            android:layout_marginEnd="20dp"
             android:text="@string/enterEmail"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -48,9 +48,9 @@
             android:id="@+id/passwordTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="80dp"
+            android:layout_marginEnd="20dp"
             android:text="@string/enterPassword"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -64,9 +64,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="80dp"
+            android:layout_marginEnd="20dp"
             android:hint="@string/enterEmail"
             android:text="@={myLoginViewModel.inputEmail}"
             android:textSize="14sp"
@@ -79,9 +79,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="80dp"
+            android:layout_marginEnd="20dp"
             android:hint="@string/enterPassword"
             android:text="@={myLoginViewModel.inputPassword}"
             android:textSize="14sp"
@@ -116,6 +116,9 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/submitButton" />
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

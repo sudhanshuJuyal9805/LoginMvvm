@@ -62,6 +62,7 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
         _navigatetoRegister.value=true
 
     }
+
     fun doneNavigating() {
         _navigateto.value = false
         _navigatetoRegister.value=false

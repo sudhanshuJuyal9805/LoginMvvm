@@ -47,16 +47,20 @@ class RegisterViewModel(private val repository: RegisterRepository, application:
             val lastName=inputLastName.value
             val email=inputEmail.value
             val password=inputPassword.value
-            if(firstName!!.isEmpty()||lastName!!.isEmpty()||email!!.isEmpty()||password!!.isEmpty())
+            if(inputFirstName.value==null||inputLastName.value==null||inputEmail.value==null||inputPassword.value==null)
             {
-                _errorToast.value=true
+                _errToast.value=true
             }
-            insert(RegisterEntity(0, firstName, lastName!!, email!!, password!!))
-            inputFirstName.value = null
-            inputLastName.value = null
-            inputEmail.value = null
-            inputPassword.value = null
-            _navigateto.value = true
+            else
+            {
+                insert(RegisterEntity(0, firstName!!, lastName!!, email!!, password!!))
+                inputFirstName.value = null
+                inputLastName.value = null
+                inputEmail.value = null
+                inputPassword.value = null
+                _navigateto.value = true
+            }
+
         }
 
 
@@ -64,6 +68,10 @@ class RegisterViewModel(private val repository: RegisterRepository, application:
     fun doneNavigating() {
         _navigateto.value = false
         Log.i("MYTAG", "Done navigating ")
+    }
+    fun closeToast()
+    {
+        _errToast.value=false
     }
 
 

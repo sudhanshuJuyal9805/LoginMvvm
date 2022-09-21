@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -34,6 +35,14 @@ class Register : AppCompatActivity() {
                 registerViewModel.doneNavigating()
             }
         })
+        registerViewModel.errorToast.observe(this, Observer { hasFinished->
+            if (hasFinished == true){
+                Log.i("MYTAG","insidi observe")
+                Toast.makeText(this, "Please fill all the field", Toast.LENGTH_LONG).show()
+                registerViewModel.closeToast()
+            }
+        })
+
     }
 
     private fun displayUsersList() {
